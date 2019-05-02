@@ -441,7 +441,7 @@ class ProjectGeneratorTests: XCTestCase {
                     ]
                 )
                 expectedResourceFiles[staticLibrary.name] = Set()
-                expectedLinkedFiles[staticLibrary.name] = Set([])
+                expectedLinkedFiles[staticLibrary.name] = Set(["FrameworkZ.framework"])
                 expectedEmbeddedFrameworks[staticLibrary.name] = Set()
 
                 let resourceBundle = Target(

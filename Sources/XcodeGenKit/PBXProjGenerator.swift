@@ -417,6 +417,14 @@ public class PBXProjGenerator {
         var extensions: [PBXBuildFile] = []
         var carthageFrameworksToEmbed: [String] = []
 
+        for copyResourcesPath in target.copyResourcesPaths {
+            let path = Path(copyResourcesPath)
+            let fileReference = sourceGenerator.getFileReference(path: path, inPath: project.basePath, sourceTree: .buildProductsDir)
+            let pbxBuildFile = PBXBuildFile(file: fileReference, settings: nil)
+            let buildFile = addObject(pbxBuildFile)
+            copyResourcesReferences.append(buildFile)
+        }
+
         let targetDependencies = (target.transitivelyLinkDependencies ?? project.options.transitivelyLinkDependencies) ?
             getAllDependenciesPlusTransitiveNeedingEmbedding(target: target) : target.dependencies
 
@@ -502,9 +510,6 @@ public class PBXProjGenerator {
             case .framework:
                 let buildPath = Path(dependency.reference).parent().string.quoted
                 frameworkBuildPaths.insert(buildPath)
-
-                // Static libraries can't link or embed dynamic frameworks
-                guard target.type != .staticLibrary else { break }
 
                 let fileReference: PBXFileElement
                 if dependency.implicit {
