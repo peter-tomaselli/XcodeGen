@@ -2,7 +2,7 @@ import Foundation
 import JSONUtilities
 import PathKit
 import ProjectSpec
-import xcodeproj
+import XcodeProj
 import Yams
 
 extension Project {
@@ -115,7 +115,7 @@ extension Project {
     }
 
     public func targetHasBuildSetting(_ setting: String, target: Target, config: Config) -> Bool {
-        return getCombinedBuildSetting(setting, target: target, config: config) != nil
+        getCombinedBuildSetting(setting, target: target, config: config) != nil
     }
 
     /// Removes values from build settings if they are defined in an xcconfig file

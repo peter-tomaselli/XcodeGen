@@ -2,12 +2,23 @@ import Foundation
 import PathKit
 import ProjectSpec
 import XcodeGenKit
-import xcodeproj
+import XcodeProj
 import XCTest
 
 class GeneratedPerformanceTests: XCTestCase {
 
     let basePath = Path.temporary + "XcodeGenPeformanceTests"
+
+    func testLoading() throws {
+        let project = try Project.testProject(basePath: basePath)
+        let specPath = basePath + "project.yaml"
+        try dumpYamlDictionary(project.toJSONDictionary(), path: specPath)
+
+        measure {
+            let spec = try! SpecFile(path: specPath)
+            _ = spec.resolvedDictionary(variables: ProcessInfo.processInfo.environment)
+        }
+    }
 
     func testGeneration() throws {
         let project = try Project.testProject(basePath: basePath)

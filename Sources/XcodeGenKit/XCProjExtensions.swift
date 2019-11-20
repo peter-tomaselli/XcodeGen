@@ -1,11 +1,11 @@
 import Foundation
 import PathKit
-import xcodeproj
+import XcodeProj
 
 extension PBXFileElement {
 
     public var nameOrPath: String {
-        return name ?? path ?? ""
+        name ?? path ?? ""
     }
 }
 
@@ -23,13 +23,13 @@ extension PBXProj {
         var string = group.nameOrPath
         for child in group.children {
             if let group = child as? PBXGroup {
-                string += "\n 📁  " + printGroup(group: group).replacingOccurrences(of: "\n ", with: "\n    ")
+                string += "\n 📁 " + printGroup(group: group).replacingOccurrences(of: "\n ", with: "\n    ")
             } else if let fileReference = child as? PBXFileReference {
-                string += "\n 📄  " + fileReference.nameOrPath
+                string += "\n 📄 " + fileReference.nameOrPath
             } else if let variantGroup = child as? PBXVariantGroup {
-                string += "\n 🌎  " + variantGroup.nameOrPath
+                string += "\n 🌎 " + variantGroup.nameOrPath
             } else if let versionGroup = child as? XCVersionGroup {
-                string += "\n 🔢  " + versionGroup.nameOrPath
+                string += "\n 🔢 " + versionGroup.nameOrPath
             }
         }
         return string
@@ -38,14 +38,20 @@ extension PBXProj {
 
 extension Dictionary {
 
-    public var valueArray: Array<Value> {
-        return Array(values)
+    public var valueArray: [Value] {
+        Array(values)
     }
 }
 
 extension Xcode {
 
     public static func fileType(path: Path) -> String? {
-        return path.extension.flatMap { Xcode.filetype(extension: $0) }
+        guard let fileExtension = path.extension else { return nil }
+        switch fileExtension {
+        // cases that aren't handled (yet) in XcodeProj.
+        default:
+            // fallback to XcodeProj defaults
+            return Xcode.filetype(extension: fileExtension)
+        }
     }
 }

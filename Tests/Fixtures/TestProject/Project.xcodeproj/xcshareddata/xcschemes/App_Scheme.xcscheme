@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0867B0DACEF28C11442DE8F70C48D1AC"
+               BlueprintIdentifier = "0867B0DACEF28C11442DE8F7"
                BuildableName = "App_iOS.app"
                BlueprintName = "App_iOS"
                ReferencedContainer = "container:Project.xcodeproj">
@@ -27,13 +27,14 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "NO"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F674B2CFC4738EEC49BAD0DA9A22DB35"
+               BlueprintIdentifier = "F674B2CFC4738EEC49BAD0DA"
                BuildableName = "App_iOS_UITests.xctest"
                BlueprintName = "App_iOS_UITests"
                ReferencedContainer = "container:Project.xcodeproj">
@@ -45,7 +46,7 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC2F16BAA6E13B44AB62F8887D4CE3FA"
+               BlueprintIdentifier = "DC2F16BAA6E13B44AB62F888"
                BuildableName = "App_iOS_Tests.xctest"
                BlueprintName = "App_iOS_Tests"
                ReferencedContainer = "container:Project.xcodeproj">
@@ -55,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0867B0DACEF28C11442DE8F70C48D1AC"
+            BlueprintIdentifier = "0867B0DACEF28C11442DE8F7"
             BuildableName = "App_iOS.app"
             BlueprintName = "App_iOS"
             ReferencedContainer = "container:Project.xcodeproj">
@@ -65,6 +66,8 @@
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Production Debug"
@@ -80,7 +83,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0867B0DACEF28C11442DE8F70C48D1AC"
+            BlueprintIdentifier = "0867B0DACEF28C11442DE8F7"
             BuildableName = "App_iOS.app"
             BlueprintName = "App_iOS"
             ReferencedContainer = "container:Project.xcodeproj">
@@ -99,7 +102,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0867B0DACEF28C11442DE8F70C48D1AC"
+            BlueprintIdentifier = "0867B0DACEF28C11442DE8F7"
             BuildableName = "App_iOS.app"
             BlueprintName = "App_iOS"
             ReferencedContainer = "container:Project.xcodeproj">

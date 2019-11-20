@@ -10,9 +10,6 @@
   <a href="https://github.com/yonaskolb/XcodeGen/releases">
     <img src="https://img.shields.io/github/release/yonaskolb/xcodegen.svg?style=for-the-badge"/>
   </a>
-  <a href="https://circleci.com/gh/yonaskolb/XcodeGen">
-    <img src="https://img.shields.io/circleci/project/github/yonaskolb/Beak.svg?style=for-the-badge"/>
-  </a>
   <a href="https://github.com/yonaskolb/XcodeGen/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/yonaskolb/XcodeGen.svg?style=for-the-badge"/>
   </a>
@@ -24,7 +21,7 @@ XcodeGen is a command line tool written in Swift that generates your Xcode proje
 
 The project spec is a YAML or JSON file that defines your targets, configurations, schemes, custom build settings and many other options. All your source directories are automatically parsed and referenced appropriately while preserving your folder structure. Sensible defaults are used in many places, so you only need to customize what is needed. Very complex projects can also be defined using more advanced features.
 
-- ✅ Generate projects on demand and remove your `.xcodeproj` file from git, which means **no more merge conflicts**!
+- ✅ Generate projects on demand and remove your `.xcodeproj` from git, which means **no more merge conflicts**!
 - ✅ Groups and files in Xcode are always **synced** to your directories on disk
 - ✅ Easy **configuration** of projects which is human readable and git friendly
 - ✅ Easily copy and paste **files and directories** without having to edit anything in Xcode
@@ -42,6 +39,10 @@ Given a very simple project spec file like this:
 name: MyProject
 options:
   bundleIdPrefix: com.myapp
+packages:
+  Yams:
+    url: https://github.com/jpsim/Yams
+    from: 2.0.0
 targets:
   MyApp:
     type: application
@@ -60,6 +61,7 @@ targets:
       - framework: Vendor/MyFramework.framework
       - sdk: Contacts.framework
       - sdk: libc++.tbd
+      - package: Yams
   MyFramework:
     type: framework
     platform: iOS
@@ -69,7 +71,7 @@ A project would be created with 2 connected targets, with all the required confi
 
 ## Installing
 
-Make sure Xcode 10.2 is installed first.
+Make sure Xcode 11 is installed first.
 
 ### [Mint](https://github.com/yonaskolb/mint)
 ```sh
@@ -81,7 +83,7 @@ mint install yonaskolb/xcodegen
 ```shell
 git clone https://github.com/yonaskolb/XcodeGen.git
 cd XcodeGen
-make
+make install
 ```
 
 ### Homebrew
@@ -105,7 +107,7 @@ swift run xcodegen
 Add the following to your Package.swift file's dependencies:
 
 ```swift
-.package(url: "https://github.com/yonaskolb/XcodeGen.git", from: "2.5.0"),
+.package(url: "https://github.com/yonaskolb/XcodeGen.git", from: "2.10.1"),
 ```
 
 And then import wherever needed: `import XcodeGenKit`
@@ -128,7 +130,7 @@ Options:
 - **--use-cache**: Used to prevent unnecessarily generating the project. If this is set, then a cache file will be written to when a project is generated. If `xcodegen` is later run but the spec and all the files it contains are the same, the project won't be generated.
 - **--cache-path**: A custom path to use for your cache file. This defaults to `~/.xcodegen/cache/{PROJECT_SPEC_PATH_HASH}`
 
-Use `xcodegen help` to see more detailed usage information.
+There are other commands as well. Use `xcodegen help` to see more detailed usage information.
 
 ## Editing
 ```shell

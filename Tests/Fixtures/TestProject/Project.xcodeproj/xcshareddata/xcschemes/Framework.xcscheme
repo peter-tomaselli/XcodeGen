@@ -14,7 +14,7 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78B91C1BC8"
+                     BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78"
                      BuildableName = "Framework.framework"
                      BlueprintName = "Framework_iOS"
                      ReferencedContainer = "container:Project.xcodeproj">
@@ -32,7 +32,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78B91C1BC8"
+               BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78"
                BuildableName = "Framework.framework"
                BlueprintName = "Framework_iOS"
                ReferencedContainer = "container:Project.xcodeproj">
@@ -44,14 +44,17 @@
       buildConfiguration = "Production Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "ja"
+      region = "en"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "NO"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78B91C1BC8"
+            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework_iOS"
             ReferencedContainer = "container:Project.xcodeproj">
@@ -61,6 +64,8 @@
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Production Debug"
@@ -75,7 +80,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78B91C1BC8"
+            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework_iOS"
             ReferencedContainer = "container:Project.xcodeproj">
@@ -104,7 +109,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78B91C1BC8"
+            BlueprintIdentifier = "AE3F93DB94E7208F2F1D9A78"
             BuildableName = "Framework.framework"
             BlueprintName = "Framework_iOS"
             ReferencedContainer = "container:Project.xcodeproj">
